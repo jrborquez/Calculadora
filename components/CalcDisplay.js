@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-
 export default class CalcDisplay extends React.Component {
 
     static defaultProps = {
         display: "",
-    }
+    };
+
+    
+    
+    
 
 
     render() {
@@ -18,7 +21,7 @@ export default class CalcDisplay extends React.Component {
     }
 
 
-}
+};
 
 const styles = StyleSheet.create({
     container: { padding: 20 },

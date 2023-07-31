@@ -25,7 +25,7 @@ export default class CalculatorScreen extends React.Component {
         this.oc = global.swisscalc.lib.operatorCache;
         this.calc = new global.swisscalc.calc.calculator();
     }
-    
+
         //Cada aplastamos un boton se añade un dígito, tal y como viene en la librería SwissCalc
     onDigitPress = (digit) =>{
         this.calc.addDigit(digit);
@@ -62,8 +62,6 @@ export default class CalculatorScreen extends React.Component {
         this.setState({ display: this.calc.getMainDisplay() });
     }
 
-
-
  
     render() {
     return(
@@ -85,7 +83,7 @@ export default class CalculatorScreen extends React.Component {
                     <Text style={this.state.switchValue === false ? styles.texto1 : styles.texto2 }>{this.state.switchValue ? 'DayMode Calculator' :'NightMode Calculator' }</Text> 
                 </View>  
                 <View style= {styles.displayContainer} >
-                    <CalcDisplay display={this.state.display} style={this.state.styles}/>
+                    <CalcDisplay display={this.state.display} />
                 </View>
 
                 <View>
