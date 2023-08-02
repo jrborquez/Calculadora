@@ -5,25 +5,19 @@ export default class CalcDisplay extends React.Component {
 
     static defaultProps = {
         display: "",
+        color:'',
     };
-
-    
-    
-    
-
 
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.display}>{this.props.display}</Text>
+                <Text style={[styles.pantalla, this.props.color]} >{this.props.display}</Text>
             </View>
         )
     }
-
-
 };
 
 const styles = StyleSheet.create({
     container: { padding: 20 },
-    display: { fontSize: 70, textAlign: "right", color: '#124BCE'}
+    pantalla: { fontSize: 70, textAlign: "right" }
 })

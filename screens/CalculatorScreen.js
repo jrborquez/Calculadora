@@ -11,6 +11,7 @@ import { View, Text, StyleSheet, Switch, SafeAreaView } from 'react-native';
 import { CalcButton, CalcDisplay } from '../components/index.js';
 
 
+
 export default class CalculatorScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +19,7 @@ export default class CalculatorScreen extends React.Component {
         this.state = {
             display: "0",
             switchValue: false,
+            color: '',
         }
         //No se puede hacer uso del useState en una class
         //Iniciamos nuestro Cálculo
@@ -62,7 +64,7 @@ export default class CalculatorScreen extends React.Component {
         this.setState({ display: this.calc.getMainDisplay() });
     }
 
- 
+    
     render() {
     return(
     <SafeAreaView style={this.state.switchValue === false ? [styles.safearea, {backgroundColor:'black'}] : styles.safearea }>
@@ -83,7 +85,7 @@ export default class CalculatorScreen extends React.Component {
                     <Text style={this.state.switchValue === false ? styles.texto1 : styles.texto2 }>{this.state.switchValue ? 'DayMode Calculator' :'NightMode Calculator' }</Text> 
                 </View>  
                 <View style= {styles.displayContainer} >
-                    <CalcDisplay display={this.state.display} />
+                    <CalcDisplay display={this.state.display} color={this.state.switchValue === false ? {color:'white'} : {color:"#124BCE"} }/>
                 </View>
 
                 <View>
@@ -127,6 +129,9 @@ export default class CalculatorScreen extends React.Component {
     );
 }
 }
+
+
+
 
 const styles = StyleSheet.create({
     
